@@ -28,7 +28,6 @@ public class Order implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Instant moment;
-	
 	private Integer orderStatus;
 	
 	@ManyToOne
@@ -96,6 +95,14 @@ public class Order implements Serializable {
 
 	public Set<OrderItem> getItems() {
 		return items;
+	}
+	
+	public Double getTotal () {
+		Double soma = 0.0;
+		for (OrderItem x : items) {
+			soma = soma + x.getSubtotal();
+		}
+		return soma;
 	}
 	@Override
 	public int hashCode() {
