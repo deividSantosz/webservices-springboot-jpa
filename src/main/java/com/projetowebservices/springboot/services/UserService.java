@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.projetowebservices.springboot.entities.User;
 import com.projetowebservices.springboot.repositories.UserRepository;
+import com.projetowebservices.springboot.services.exceptions.ResourceNotFoundException;
 
 import jakarta.persistence.EntityNotFoundException;
 
@@ -23,14 +24,8 @@ public class UserService {
 	
 	public User findById (Long id) {
 		Optional <User> obj =  repository.findById(id);
-		if(obj.isPresent()) {
-			return obj.get();
-		} 
-		else {
-			throw new EntityNotFoundException("User not found");
-		}
+			return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
-	
 	public User insert (User obj) {
 		return repository.save(obj);
 	}
