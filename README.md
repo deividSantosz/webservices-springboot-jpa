@@ -1,4 +1,4 @@
-# API REST COM SPRING BOOT, JPA E POSTGRES
+# API REST COM SPRING BOOT, JPA E MYSQL
 
 # SOBRE O PROJETO
 
@@ -19,7 +19,7 @@ A API consiste em aplicar os conceitos da arquitetura REST em um modelo de domin
 - Spring Boot
 - JPA/Hibernate
 - Maven
-- Banco de dados: Postgresql
+- Banco de dados: MYSQL
 
 # AUTOR
 
