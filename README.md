@@ -19,7 +19,7 @@ A API consiste em aplicar os conceitos da arquitetura REST em um modelo de domin
 - Spring Boot
 - JPA/Hibernate
 - Maven
-- Banco de dados: MYSQL
+- Banco de dados: H2
 
 # AUTOR
 
